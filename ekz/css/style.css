@@ -1,0 +1,296 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --main-black: #343d48;
+    --main-white: #fff;
+    --black-font: #000;
+    --white-font: #fff;
+    --future-card-back: #222831;
+    --future-weather-block-black: #272E37;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #343D4B;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-card{
+    height: 666px;
+    width: 493px;
+    background: url(bg_image.png), linear-gradient(152.19deg, rgba(136, 235, 239, 0.9) -0.04%, rgba(83, 91, 230, 0.9) 100%);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    color: var(--white-font);
+}
+.top-info{
+    margin-top: 48px;
+    margin-left: 32px;
+    align-self: flex-start;
+    flex-grow: 1;
+}
+.day{
+    font-size: 37px;
+    line-height: 45px;
+    font-weight: 700;
+}
+.date{
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+.location-img{
+    width: 27px;
+    height: 27px;
+    margin-right: 8px;
+}
+.position{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+}
+.bot-info{
+    margin-top: 200px;
+    margin-bottom: 84px;
+    margin-left: 32px;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+.weather-img{
+    width: 95px;
+    height: 95px;
+}
+.current-temp{
+    margin-top: 9px;
+    margin-bottom: 13px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+}
+.current-status{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+}
+.stats-card{
+    background: var(--future-card-back);
+    width: 520px;
+    height: 623px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.all-future-info{
+    margin: 55px 50px 62px 57px;
+    display: flex;
+    flex-direction: column;
+    color: var(--white-font);
+}
+.current-precipitation, .current-humidity, .current-wind{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 16px;
+}
+.future-weather{
+    background: var(--future-card-back);
+    display: flex;
+    gap: 1px;
+    margin-top: 63px;
+}
+.block{
+    background: var(--future-weather-block-black);
+    color: var(--white-font);
+    width: 104px;
+    height: 168px;
+    border-radius: 10px;
+    transition-duration: .5s;
+}
+.block-info{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 25px 20px 24px;
+    gap: 15px;
+    justify-content: center;
+}
+.block:hover{
+    background: var(--main-white);
+    color: var(--black-font);
+    transition-duration: .5s;
+}
+/* .future-weather-img:hover{
+    background: url(../img/sun_black.svg);
+    background-size: cover;
+    transition-duration: .5s;
+} */
+.future-weather-img{
+    width: 55px;
+    height: 55px;
+    /* background: url(../img/sun_white.svg); */
+    /* background-size: cover; */
+    transition-duration: .5s;
+}
+.future-day-name{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+.future-temp{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+.change-location{
+    width: 415px;
+    height: 53px;
+    background: linear-gradient(90.8deg, rgba(144, 217, 224, 0.9) 0.2%, rgba(84, 96, 230, 0.9) 100%);
+    border-radius: 10px;
+    color: var(--white-font);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin-top: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.popup, .err-popup{
+    display: flex;
+    position: absolute;
+    background: #343D4B;
+    border-radius: 20px;
+    min-width: 500px;
+    min-height: 400px;
+}
+.err-popup{
+    background: #56a1d3;
+}
+.popup-form{
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid black;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+.close-popup, .close-err-popup{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    color: red;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: inherit;
+}
+.city-input{
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(144, 217, 224, 0.9);
+    background-color: inherit;
+    color: white;
+}
+.find-city{
+    width: 200px;
+    height: 30px;
+    background: linear-gradient(90.8deg, rgba(144, 217, 224, 0.9) 0.2%, rgba(84, 96, 230, 0.9) 100%);
+    border-radius: 10px;
+    color: var(--white-font);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin-top: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.history{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+}
+.history-header{
+    margin-top: 30px;
+    color: var(--white-font);
+    font-size: 20px;
+}
+
+
+
+.switcher{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+label {
+    width: 200px;
+    height: 50px;
+    display:block;
+    background-color: #477a85;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 20px #477a8550;
+}
+label::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #e8f5f7;
+    position: absolute;
+    border-radius: 70px;
+    top: 10px;
+    left: 10px;
+    transition: 0.5s;
+}
+input:checked + label:after {
+    left: calc(100% - 10px);
+    transform: translateX(-100%);
+}
+input:checked + label {
+    background-color: #243d42;
+}
+label:active:after {
+    width: 160px;
+}

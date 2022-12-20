@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+
+    <!-- <section class="switcher">
+        <input type="checkbox" name="switch" id="switch">
+        <label for="switch"></label>
+    </section> -->
+
+    <section class="popup">
+        <form action="" class="popup-form">
+            <button type="button" class="close-popup">X</button>
+            <input type="text" class="city-input" placeholder="Введите город">
+            <button type="button" class="find-city">Узнать погоду</button>
+        </form> 
+        <section class="history">
+            <h4 class="history-header">История запросов</h4>
+        </section>
+    </section>
+    <section class="err-popup">
+        <button type="button" class="close-err-popup">X</button>
+        <h4 class="history-header">Город не был найден, введите еще раз.</h4>
+    </section>
+
+    <section class="weather-card">
+        <section class="top-info">
+            <h3 class="day">Понедельник</h3>
+            <p class="date">28 Ноября 2022</p>
+            <p class="position"><img src="img/Location.svg" class="location-img">Караганда, Казахстан</p>
+        </section>
+        <section class="bot-info">
+            <img src="" alt="weather-img" class="weather-img">
+            <h3 class="current-temp">0 °C</h3>
+            <h4 class="current-status">Облачно</h4>
+        </section>        
+    </section>
+
+    <section class="stats-card" onfocus="ifHover()">
+        <section class="all-future-info">
+            <h2 class="current-precipitation">Осадки: </h2>
+            <h2 class="current-humidity">Влажность: </h2>
+            <h2 class="current-wind">Ветер: </h2>
+            <section class="future-weather">
+                <section class="block" onmouseenter="ifHover(this)" onmouseout="ifHoverOut(this)">
+                    <section class="block-info">
+                        <img class="future-weather-img" src="img/sun_white.svg"></img>
+                        <p class="future-day-name">Пон</p>
+                        <p class="future-temp">0 °C</p>
+                    </section>
+                </section>
+                <section class="block" onmouseenter="ifHover(this)" onmouseout="ifHoverOut(this)">
+                    <section class="block-info">
+                        <img class="future-weather-img" src="img/sun_white.svg"></img>
+                        <p class="future-day-name">Втор</p>
+                        <p class="future-temp">0 °C</p>
+                    </section>
+                </section>
+                <section class="block" onmouseenter="ifHover(this)" onmouseout="ifHoverOut(this)">
+                    <section class="block-info">
+                        <img class="future-weather-img" src="img/sun_white.svg"></img>
+                        <p class="future-day-name">Сред</p>
+                        <p class="future-temp">0 °C</p>
+                    </section>
+                </section>
+                <section class="block" onmouseenter="ifHover(this)" onmouseout="ifHoverOut(this)">
+                    <section class="block-info">
+                        <img class="future-weather-img" src="img/sun_white.svg"></img>
+                        <p class="future-day-name">Чет</p>
+                        <p class="future-temp">0 °C</p>
+                    </section>
+                </section>
+            </section>
+            <button type="button" class="change-location"><img src="img/Location.svg" class="location-img">Изменить локацию</button>
+        </section>
+    </section>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
